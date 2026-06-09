@@ -33,13 +33,17 @@ let rec get_rounds (t : float) (index : int) (rounds : int) (sum : int) : (int *
       get_rounds t (index + 1) (rounds + x) ((sum + value) mod p)
     ;;
 
+
+
+
 let rec compute (low : float) (high : float) : float =
     if high -. low < 1e-9 then high
     else
       let mid = (low +. high) /. 2. in
       let (r, _) = get_rounds mid 0 0 0 in
       if r >= m then compute low mid else compute mid high
-    ;;
+
+
 
 let solve (limit : int) (m : int) : int =
 
