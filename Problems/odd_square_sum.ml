@@ -1,8 +1,8 @@
-(* Out of the first 107 thousand sqaures, sum the odd ones only *)
+(* Out of the first 617 thousand sqaures, sum the odd ones only *)
 
 let rec getSum (current : int) (count : int) : int =
   match count with 
-  | ct when ct >= 107000 -> 0
+  | ct when ct >= 617000 -> 0
   | _ -> current*current + getSum (current + 2) (count + 2)
 ;;
 
